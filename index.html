@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Самосбор: Ликвидатор 1324</title>
+    <!-- Google Fonts for Retro Terminal style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Fira+Mono:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Three.js for 3D graphics -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- Yandex Games SDK -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- MAIN GAME CONTAINER -->
+    <div id="game-container">
+        
+        <!-- SPLASH SCREEN / MAIN MENU -->
+        <div id="splash-screen" class="panel screen-active">
+            <div class="hazard-stripe"></div>
+            <div class="splash-content">
+                <h1 class="glow-red title-text" data-i18n="menu_title">С А М О С Б О Р</h1>
+                <h2 class="subtitle-text" data-i18n="menu_subtitle">ЛИКВИДАТОР: ЭТАЖ 1324 [3D FPS]</h2>
+                <div class="creator-subtitle glow-amber" style="font-family: 'Share Tech Mono', monospace; font-size: 0.95rem; margin: -5px 0 15px 0; text-align: center; letter-spacing: 1px;" data-i18n="menu_creator">СОЗДАТЕЛЬ ИГРЫ: @sw1therland</div>
+                
+                <div class="terminal-text-block">
+                    <p class="blink-cursor" data-i18n="init_interface">> ИНИЦИАЛИЗАЦИЯ ИНТЕРФЕЙСА ЛИКВИДАТОРА...</p>
+                    <p data-i18n="network_ok">> ПОДКЛЮЧЕНИЕ К СЕТИ ГИГАХРУЩЕВКИ... ОК.</p>
+                    <p data-i18n="equipment_info">> СНАРЯЖЕНИЕ: ПИСТОЛЕТ (24), ПРОТИВОГАЗ, ВОДА, СУМКА.</p>
+                    <p class="glow-green" data-i18n="mission_info">> ЗАДАЧА: СПУСТИТЬСЯ НА 1-Й ЭТАЖ И ВЫЖИТЬ.</p>
+                </div>
+
+
+
+                <div id="loading-bar-container">
+                    <div id="loading-bar"></div>
+                    <span id="loading-text" data-i18n="loading_sdk">Загрузка SDK...</span>
+                </div>
+
+                <button id="btn-start-game" class="btn glow-btn btn-disabled" disabled style="width: 100%;" data-i18n="btn_start">НАЧАТЬ СМЕНУ</button>
+                <div class="menu-buttons-row" style="margin-top: 10px; display: flex; gap: 10px; width: 100%;">
+                    <button id="btn-open-settings" class="btn" style="flex: 1; padding: 10px 5px; font-size: 0.85rem;" data-i18n="btn_settings">НАСТРОЙКИ</button>
+                    <button id="btn-open-achievements" class="btn glow-blue" style="flex: 1; padding: 10px 5px; font-size: 0.85rem;" data-i18n="btn_achievements">ДОСТИЖЕНИЯ</button>
+                    <button id="btn-open-about" class="btn" style="flex: 1; padding: 10px 5px; font-size: 0.85rem;" data-i18n="btn_about">ОБ ИГРЕ</button>
+                </div>
+            </div>
+            <div class="hazard-stripe bottom"></div>
+        </div>
+
+        <!-- MAIN GAME INTERFACE -->
+        <div id="main-interface" class="screen-inactive" style="width: 100%; height: 100%;">
+            <!-- PLAY ZONE: FULL SCREEN -->
+            <div id="play-zone" style="width: 100%; height: 100%; display: block; position: relative; margin: 0; padding: 0;">
+                
+                <!-- VIEWPORT (VISUAL CORRIDOR / ACTION GRAPHICS) -->
+                <div id="viewport-container" style="width: 100%; height: 100%; border: none; padding: 0; margin: 0; position: absolute; top: 0; left: 0;">
+                    <div id="canvas-holder" style="width: 100%; height: 100%;">
+                        <!-- WebGL canvas will be placed here -->
+                    </div>
+                    
+                    <!-- Center screen crosshair for interactions -->
+                    <div id="crosshair"></div>
+                    
+                    <!-- TOP BAR HUD (Overlay) -->
+                    <header id="hud" class="overlay-ui hud-overlay">
+                        <div class="hud-item glow-amber">
+                            <span class="hud-label" data-i18n="hud_floor">ЭТАЖ:</span>
+                            <span id="hud-floor" class="hud-value">1324</span>
+                        </div>
+                        <div class="hud-item glow-green" id="hud-health-container">
+                            <span class="hud-label" data-i18n="hud_health">ЖИЗНЬ:</span>
+                            <span id="hud-health" class="hud-value">100%</span>
+                        </div>
+                        <div class="hud-item glow-blue" id="hud-water-container">
+                            <span class="hud-label" data-i18n="hud_water">ВОДА:</span>
+                            <span id="hud-water" class="hud-value">100%</span>
+                        </div>
+                        <div class="hud-item glow-yellow" id="hud-ammo-container">
+                            <span class="hud-label" data-i18n="hud_ammo">ПАТРОНЫ:</span>
+                            <span id="hud-ammo" class="hud-value">24</span>
+                        </div>
+                        <div class="hud-item glow-purple" id="hud-filter-container">
+                            <span class="hud-label" data-i18n="hud_filter">ФИЛЬТР:</span>
+                            <span id="hud-filter" class="hud-value">100%</span>
+                        </div>
+                        <div class="hud-item glow-orange" id="hud-stamina-container">
+                            <span class="hud-label" data-i18n="hud_stamina">БЕГ:</span>
+                            <span id="hud-stamina" class="hud-value">100%</span>
+                        </div>
+                    </header>
+
+                    <!-- FPS keyboard instructions overlay -->
+                    <div id="fps-instructions" data-i18n="fps_instructions">
+                        WASD - Ходить | Shift - Бег | Space - Пинок | Мышь - Обзор | ЛКМ - Выстрел | R - Дверь | F - Фонарик | E - Слушать | T - Противогаз | Q - Вода | G - Сумка | Z - Обыск | B - Взломщик
+                    </div>
+                    
+                    <!-- Mobile controls overlay (hidden on desktop) -->
+                    <div id="mobile-controls-container">
+                        <div id="virtual-dpad">
+                            <button id="btn-v-up" class="btn btn-v-dir">▲</button>
+                            <div class="v-horizontal-row">
+                                <button id="btn-v-left" class="btn btn-v-dir">◀</button>
+                                <button id="btn-v-right" class="btn btn-v-dir">▶</button>
+                            </div>
+                            <button id="btn-v-down" class="btn btn-v-dir">▼</button>
+                        </div>
+                        
+                        <div id="virtual-actions">
+                            <button id="btn-v-flash" class="btn btn-v-action glow-amber" data-i18n="mobile_flashlight">Фонарик</button>
+                            <button id="btn-v-listen" class="btn btn-v-action" data-i18n="mobile_listen">Слушать</button>
+                            <button id="btn-v-open" class="btn btn-v-action" data-i18n="mobile_door">Дверь</button>
+                            <button id="btn-v-shoot" class="btn btn-v-action glow-red" data-i18n="mobile_fire">Огонь</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Screen Overlay States -->
+                    <div id="gasmask-overlay" class="overlay-hidden"></div>
+                    <div id="samosbor-overlay" class="overlay-hidden"></div>
+                    <!-- Cutscene Subtitles Overlay -->
+                    <div id="cutscene-subtitles" class="overlay-hidden">
+                        <span id="subtitle-text"></span>
+                    </div>
+                    <div id="jumpscare-overlay" class="overlay-hidden">
+                        <div class="monster-face"></div>
+                    </div>
+                    
+                    <!-- Listening Signal Meter overlay (only shown when listening) -->
+                    <div id="listening-indicator" class="overlay-hidden">
+                        <span class="listening-title animate-blink" data-i18n="listening_title">СЛУШАЮ...</span>
+                        <div class="wave-container">
+                            <div class="bar bar-1"></div>
+                            <div class="bar bar-2"></div>
+                            <div class="bar bar-3"></div>
+                            <div class="bar bar-4"></div>
+                            <div class="bar bar-5"></div>
+                        </div>
+                        <span id="listening-subtext" data-i18n="listening_subtext">Шумы бетонной шахты</span>
+                    </div>
+
+                    <!-- Room search modal/overlay inside viewport -->
+                    <div id="room-overlay" class="overlay-hidden">
+                        <div class="room-details">
+                            <h3 id="room-title">КВАРТИРА 412</h3>
+                            <div class="room-search-progress-bar">
+                                <div id="room-search-progress"></div>
+                            </div>
+                            <p id="room-status-text">Комната безопасна. Можно обыскать или запереться.</p>
+                        </div>
+                    </div>
+
+                    <!-- Loot Selection Overlay -->
+                    <div id="loot-overlay" class="overlay-hidden">
+                        <div class="loot-container">
+                            <h3 id="loot-title">НАЙДЕННЫЕ ПРЕДМЕТЫ</h3>
+                            <div id="loot-items-list"></div>
+                            <div class="loot-buttons">
+                                <button id="btn-take-all" class="btn btn-room-action glow-yellow" data-i18n="loot_take_all">Забрать всё</button>
+                                <button id="btn-close-loot" class="btn btn-room-action glow-red" data-i18n="loot_close">Закрыть</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floor Descent Transition Overlay -->
+                    <div id="descent-transition-overlay" class="overlay-hidden">
+                        <div class="descent-transition-content">
+                            <h2 class="animate-blink" data-i18n="descent_transition_title">ПЕРЕХОД НА НИЖНИЙ ЭТАЖ...</h2>
+                            <h1 id="transition-floor-num">ЭТАЖ 1323</h1>
+                        </div>
+                    </div>
+
+                    <!-- BOTTOM UI OVERLAYS -->
+                    <div class="overlay-ui bottom-ui-container">
+                        <!-- Log Console (Bottom Left) -->
+                        <div id="log-console" class="overlay-panel log-overlay">
+                            <div id="log-feed">
+                                <!-- Messages will append here -->
+                            </div>
+                        </div>
+
+                        <!-- Actions and Info (Bottom Right) -->
+                        <div id="actions-panel" class="overlay-panel actions-overlay">
+                            <div class="action-grid">
+                                <button id="btn-mask" class="btn btn-action glow-purple" data-i18n="btn_mask">
+                                    Надеть противогаз
+                                </button>
+                                <button id="btn-drink" class="btn btn-action glow-blue" data-i18n="btn_drink">
+                                     Сделать глоток воды
+                                </button>
+                                <button id="btn-bandage" class="btn btn-action glow-green btn-disabled" disabled>
+                                     Бинт: 0
+                                </button>
+                                <button id="btn-bag" class="btn btn-action glow-amber">
+                                     Сумка (Записки: <span id="bag-notes-count">0</span>/10)
+                                </button>
+                            </div>
+
+
+                            <div class="descent-button-container" style="margin-top: 5px;">
+                                <button id="btn-descend" class="btn btn-action btn-disabled" disabled data-i18n="btn_descend_default">
+                                    Идите на лестницу в конце коридора
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CENTER FLOATING PANELS -->
+                    <div class="center-ui-container">
+                        <!-- Focused Interaction HUD Panel -->
+                        <div class="focused-object-hud overlay-panel">
+                            <div class="panel-header" style="border-top: 1px solid var(--border-color)" data-i18n="focus_title">ФОКУС ОБЪЕКТА</div>
+                            <div class="focused-object-details">
+                                <span id="focused-object-name" data-i18n="focus_object_none">ОБЪЕКТ НЕ ВЫБРАН</span>
+                                <span id="focused-object-state" data-i18n="focus_object_desc">Подойдите к двери или объекту взаимодействия</span>
+                            </div>
+                            <div class="door-actions-row" id="focused-door-actions" style="padding: 6px;">
+                                <button id="btn-listen" class="btn btn-subaction btn-disabled" disabled data-i18n="btn_listen">Слушать</button>
+                                <button id="btn-open-door" class="btn btn-subaction btn-disabled" disabled data-i18n="btn_open_door">Открыть</button>
+                            </div>
+                        </div>
+
+                        <!-- Inside Opened Room Actions -->
+                        <div id="room-actions-bar" class="room-actions-hidden overlay-panel" style="margin-top: 10px;">
+                            <div class="panel-header" style="border-top: 1px solid var(--border-color)" data-i18n="room_actions_title">ДЕЙСТВИЯ</div>
+                            <button id="btn-search-room" class="btn btn-room-action glow-yellow" data-i18n="btn_search_room">Обыскать мебель</button>
+                            <button id="btn-search-kitchen" class="btn btn-room-action glow-yellow" style="display:none" data-i18n="room_kitchen_search">Обыскать кухню</button>
+                            <button id="btn-lock-room" class="btn btn-room-action glow-green" data-i18n="btn_lock_room">Запереть дверь</button>
+                            <button id="btn-exit-room" class="btn btn-room-action glow-red" data-i18n="btn_exit_room">Выйти в коридор</button>
+                        </div>
+
+                        <!-- Level Transition Action -->
+                        <div id="transition-actions-bar" class="room-actions-hidden overlay-panel" style="margin-top: 10px;">
+                            <div class="panel-header" style="border-top: 1px solid var(--border-color)" data-i18n="transition_actions_title">ТЕХНИЧЕСКИЙ ШЛЮЗ</div>
+                            <button id="btn-enter-transition" class="btn btn-room-action glow-green" data-i18n="btn_enter_transition">Перейти на другой сектор</button>
+                            <button id="btn-cancel-transition" class="btn btn-room-action glow-red" data-i18n="btn_cancel_transition">Вернуться в коридор</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LORE NOTES MODAL -->
+        <div id="notes-modal" class="modal-backdrop modal-hidden">
+            <div class="modal-content panel">
+                <div class="panel-header"><span data-i18n="notes_title">СУМКА: НАЙДЕННЫЕ ЗАПИСКИ</span> <span id="modal-close" class="modal-close-btn">&times;</span></div>
+                
+                <div class="notes-modal-layout">
+                    <div class="notes-list-sidebar">
+                        <div class="panel-header" style="border-top: 1px solid var(--border-color); font-size: 0.75rem; padding: 2px 4px; margin-bottom: 5px;" data-i18n="notes_inventory_title">ИНВЕНТАРЬ</div>
+                        <div class="inventory-block" style="padding: 6px; border: 1px solid var(--border-color); background: rgba(0,0,0,0.3); font-size: 0.8rem; display: flex; flex-direction: column; gap: 4px; margin-bottom: 15px; font-family: var(--font-mono);">
+                            <div><span data-i18n="bag_hacker_label">ВЗЛОМЩИК</span>: <span id="bag-hacker-tool" style="font-weight: bold; color: var(--glow-red);">НЕТ</span></div>
+                            <div><span data-i18n="bag_batteries_label">БАТАРЕЙКИ</span>: <span id="bag-batteries" style="font-weight: bold; color: var(--glow-amber);">0 шт</span></div>
+                        </div>
+                        <div class="panel-header" style="border-top: 1px solid var(--border-color); font-size: 0.75rem; padding: 2px 4px; margin-bottom: 5px;" data-i18n="notes_list_title">ЗАПИСКИ</div>
+                        <!-- List of collected notes -->
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-0">Записка 1</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-1">Записка 2</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-2">Записка 3</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-3">Записка 4</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-4">Записка 5</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-5">Записка 6</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-6">Записка 7</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-7">Записка 8</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-8">Записка 9</button>
+                        <button class="btn btn-note-item btn-note-locked" id="note-tab-9">Записка 10</button>
+                    </div>
+                    <div class="note-viewer">
+                        <div id="note-content-area">
+                            <p class="select-note-prompt" data-i18n="select_note_prompt">Выберите записку в списке слева для чтения.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GAME OVER / ENDINGS SCREENS -->
+        <div id="gameover-screen" class="panel screen-inactive">
+            <div class="hazard-stripe"></div>
+            <div class="gameover-content">
+                <h1 id="gameover-title" class="glow-red">ЛИКВИДИРОВАН</h1>
+                
+                <div id="gameover-story" class="terminal-text-block">
+                    <!-- Dynamic game over story description -->
+                </div>
+
+                <div class="ending-label-container">
+                    <span id="ending-badge" class="badge-red">КОНЧИНА</span>
+                </div>
+
+                <!-- Collected notes display for endings -->
+                <div id="gameover-notes-container" class="gameover-notes-block" style="display: none;">
+                    <h3 class="notes-header" data-i18n="gameover_notes_collected">СОБРАННЫЕ ЗАПИСКИ ИЗ ГИГАХРУЩА:</h3>
+                    <div id="gameover-notes-list"></div>
+                </div>
+
+                <!-- Credits for endings -->
+                <div id="gameover-credits-container" style="display: none; margin: 15px auto; border: 1px solid var(--border-color); padding: 12px; background: rgba(0,0,0,0.3); border-radius: 4px; max-width: 420px; text-align: center; font-family: var(--font-mono); color: var(--glow-green);">
+                    <div style="font-weight: bold; font-size: 1rem; margin-bottom: 5px; letter-spacing: 1px;" data-i18n="credits_header">ТИТРЫ // CREDITS</div>
+                    <div style="font-size: 0.8rem; color: #fff; margin-bottom: 2px;" data-i18n="credits_author_label">АВТОР И РАЗРАБОТЧИК:</div>
+                    <div style="font-size: 1.2rem; font-weight: bold; color: var(--glow-green); letter-spacing: 1px; margin-bottom: 6px;">@sw1therland</div>
+                    <div style="font-size: 0.75rem; color: var(--text-dim); line-height: 1.3;" data-i18n="credits_tech">
+                        Технологии: HTML5, Three.js, Web Audio API<br>
+                        Специально для вселенной Самосбора
+                    </div>
+                </div>
+
+                <button id="btn-restart" class="btn glow-btn" data-i18n="btn_restart">НАЧАТЬ ЗАНОВО</button>
+            </div>
+            <div class="hazard-stripe bottom"></div>
+        </div>
+
+    </div>
+
+    <!-- DEVELOPER CONSOLE -->
+    <div id="dev-console" style="display:none; position:fixed; top:0; left:0; width:100%; height:40%; background:rgba(0,0,0,0.92); z-index:99999; font-family:'Courier New',monospace; color:#00ff00; overflow:hidden; border-bottom:2px solid #00ff00; backdrop-filter:blur(5px);">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:4px 10px; background:rgba(0,255,0,0.1); border-bottom:1px solid rgba(0,255,0,0.3);">
+            <span style="font-size:12px; color:#00ff00;">SAMOSBOR DEV CONSOLE // Ctrl+Shift+~</span>
+            <span style="font-size:11px; color:#00cc00;">Type 'help' for commands</span>
+        </div>
+        <div id="dev-console-log" style="height:calc(100% - 70px); overflow-y:auto; padding:8px 10px; font-size:13px; line-height:1.6;"></div>
+        <div style="display:flex; height:30px; border-top:1px solid #00ff00; align-items:center;">
+            <span style="padding:0 8px; color:#00ff00; font-size:14px;">&gt;</span>
+            <input id="dev-console-input" type="text" style="flex:1; background:transparent; border:none; color:#00ff00; font-family:'Courier New',monospace; font-size:14px; outline:none; caret-color:#00ff00;" placeholder="Enter command..." autocomplete="off" />
+        </div>
+    </div>
+
+    <!-- PAUSE SCREEN -->
+    <div id="pause-screen" class="panel screen-inactive modal-backdrop" style="z-index: 150;">
+        <div class="modal-content panel" style="max-width: 400px; height: auto; padding: 20px; text-align: center;">
+            <h1 class="glow-amber" style="margin-bottom: 20px; font-size: 2rem;" data-i18n="pause_title">ПАУЗА</h1>
+            <div class="menu-buttons-column" style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+                <button id="btn-resume-game" class="btn glow-green" style="width: 100%;" data-i18n="btn_resume">ПРОДОЛЖИТЬ СМЕНУ</button>
+                <button id="btn-pause-settings" class="btn" style="width: 100%;" data-i18n="btn_settings">НАСТРОЙКИ</button>
+                <button id="btn-exit-menu" class="btn glow-red" style="width: 100%;" data-i18n="btn_exit">ВЫЙТИ В МЕНЮ</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SETTINGS MODAL (LANGUAGE & CONTROLS) -->
+    <div id="settings-modal" class="modal-backdrop modal-hidden" style="z-index: 250;">
+        <div class="modal-content panel" style="max-width: 500px; height: 85%;">
+            <div class="panel-header"><span data-i18n="settings_title">НАСТРОЙКИ</span> <span id="settings-close" class="modal-close-btn">&times;</span></div>
+            <div style="padding: 15px; overflow-y: auto; flex-grow: 1; font-family: var(--font-serif); font-size: 0.9rem; display: flex; flex-direction: column;">
+                
+                <!-- Language selection section -->
+                <div style="margin-bottom: 20px;">
+                    <div class="panel-header" style="border-top: 1px solid var(--border-color); font-size: 0.8rem; padding: 4px; margin-bottom: 8px;" data-i18n="section_language">ВЫБОР ЯЗЫКА // LANGUAGE</div>
+                    <select id="settings-language-select" class="btn" style="width: 100%; font-family: var(--font-mono); font-size: 0.95rem; background: #1c2128; border: 2px solid var(--border-color); color: var(--text-color); padding: 8px; outline: none; cursor: pointer;">
+                        <option value="ru">Русский</option>
+                        <option value="en">English</option>
+                        <option value="zh">中文 (Chinese)</option>
+                        <option value="de">Deutsch (German)</option>
+                        <option value="it">Italiano (Italian)</option>
+                        <option value="es">Español (Spanish)</option>
+                    </select>
+                </div>
+                
+                <!-- Sensitivity slider section -->
+                <div style="margin-bottom: 20px;">
+                    <div class="panel-header" style="border-top: 1px solid var(--border-color); font-size: 0.8rem; padding: 4px; margin-bottom: 8px;" data-i18n="sens_slider_label">ЧУВСТВИТЕЛЬНОСТЬ МЫШИ</div>
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <input id="settings-sensitivity-slider" type="range" min="0.1" max="3.0" step="0.1" value="1.0" style="flex-grow: 1; cursor: pointer; accent-color: var(--glow-amber);">
+                        <span id="settings-sensitivity-value" style="font-family: var(--font-mono); min-width: 30px; text-align: right; color: var(--glow-amber);">1.0</span>
+                    </div>
+                </div>
+                
+                <!-- Key rebindings section -->
+                <div style="flex-grow: 1; display: flex; flex-direction: column; overflow: hidden;">
+                    <div class="panel-header" style="border-top: 1px solid var(--border-color); font-size: 0.8rem; padding: 4px; margin-bottom: 8px;" data-i18n="section_controls">УПРАВЛЕНИЕ // CONTROLS</div>
+                    <p style="margin-bottom: 10px; color: var(--text-dim);" data-i18n="label_rebind_desc">Кликните по действию, затем нажмите новую клавишу на клавиатуре.</p>
+                    <div id="rebind-list" style="display: flex; flex-direction: column; gap: 8px; flex-grow: 1; overflow-y: auto; padding-right: 5px;">
+                        <!-- Dynamically populated via JS -->
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px; display: flex; gap: 10px; flex-shrink: 0;">
+                    <button id="btn-rebind-reset" class="btn" style="flex: 1;" data-i18n="btn_reset">СБРОСИТЬ</button>
+                    <button id="btn-rebind-save" class="btn glow-green" style="flex: 1;" data-i18n="btn_save">СОХРАНИТЬ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT GAME MODAL -->
+    <div id="about-modal" class="modal-backdrop modal-hidden" style="z-index: 250;">
+        <div class="modal-content panel" style="max-width: 500px; height: 80%;">
+            <div class="panel-header"><span data-i18n="about_title">ОБ ИГРЕ</span> <span id="about-close" class="modal-close-btn">&times;</span></div>
+            <div id="about-content" data-i18n="about_content_html" style="padding: 20px; overflow-y: auto; flex-grow: 1; font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.6; text-align: left;">
+                
+    <p style="margin-bottom: 10px;"><strong>САМОСБОР: ПОГРУЖЕНИЕ</strong> — это атмосферный инди-хоррор с элементами выживания, созданный во вселенной мрачной гигахрущевки.</p>
+    <p style="margin-bottom: 10px;">Вы — житель одного из бесконечных бетонных блоков. Сирена воет, предупреждая о начале смертельного Самосбора. Ваша цель — спуститься на первый этаж и попытаться спастись.</p>
+    <p style="margin-bottom: 10px; color: #aaa;">Ищите записки, чтобы узнать правду. Прячьтесь в комнатах от смертельного газа. Берегитесь того, что бродит во тьме.</p>
+    <div style="margin-top: 20px; text-align: center; color: #888; font-size: 0.8rem;">Версия 1.0</div>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- ACHIEVEMENTS MODAL -->
+    <div id="achievements-modal" class="modal-backdrop modal-hidden" style="z-index: 250;">
+        <div class="modal-content panel" style="max-width: 500px; height: 80%;">
+            <div class="panel-header"><span data-i18n="achievements_title">ДОСТИЖЕНИЯ</span> <span id="achievements-close" class="modal-close-btn">&times;</span></div>
+            <div style="padding: 20px; overflow-y: auto; flex-grow: 1; font-family: var(--font-serif); font-size: 0.95rem; line-height: 1.6; text-align: left; display: flex; flex-direction: column;">
+                <h3 class="glow-blue" style="margin-bottom: 15px; font-weight: bold; text-align: center; font-family: var(--font-mono); letter-spacing: 1px;" data-i18n="achievements_subtitle">СПИСОК ДОСТИЖЕНИЙ ЛИКВИДАТОРА</h3>
+                <div id="achievements-list-container" style="display: flex; flex-direction: column; gap: 12px; overflow-y: auto; flex-grow: 1; padding-right: 5px;">
+                    <!-- Dynamically populated via JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HACKING PUZZLE MODAL -->
+    <div id="hack-modal" class="modal-backdrop modal-hidden" style="z-index: 200;">
+        <div class="modal-content panel" style="max-width: 450px; height: auto; padding: 20px;">
+            <div class="panel-header" data-i18n="hack_title">ДЕШИФРАТОР ГЕРМОЗАТВОРА // БАЙПАС</div>
+            
+            <div style="background: rgba(0, 20, 10, 0.9); border: 2px solid #00ff66; border-radius: 4px; padding: 15px; margin: 15px 0; font-family: 'Courier New', monospace; box-shadow: inset 0 0 15px rgba(0,255,102,0.3); text-shadow: 0 0 5px rgba(0,255,102,0.5); box-sizing: border-box;">
+                <div style="display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 11px; border-bottom: 1px solid rgba(0,255,102,0.3); padding-bottom: 5px;">
+                    <span data-i18n="hack_sys">СИСТЕМА: ГРУППА-Б</span>
+                    <span data-i18n="hack_bat">АККУМУЛЯТОР: ОК</span>
+                </div>
+                
+                <!-- Channels indicators -->
+                <div style="display: flex; justify-content: space-around; margin: 15px 0;">
+                    <div id="hack-chan-a" style="text-align: center; color: #ff3333; transition: color 0.3s;">
+                        <div style="font-size: 20px; line-height: 1;">●</div>
+                        <div style="font-size: 10px; letter-spacing: 0.5px;" data-i18n="hack_chan_a_label">КАНАЛ А</div>
+                        <div id="hack-target-a" style="font-size: 11px; font-weight: bold; margin-top: 3px;">24.5 MHz</div>
+                    </div>
+                    <div id="hack-chan-b" style="text-align: center; color: #ff3333; transition: color 0.3s;">
+                        <div style="font-size: 20px; line-height: 1;">●</div>
+                        <div style="font-size: 10px; letter-spacing: 0.5px;" data-i18n="hack_chan_b_label">КАНАЛ Б</div>
+                        <div id="hack-target-b" style="font-size: 11px; font-weight: bold; margin-top: 3px;">58.2 MHz</div>
+                    </div>
+                    <div id="hack-chan-c" style="text-align: center; color: #ff3333; transition: color 0.3s;">
+                        <div style="font-size: 20px; line-height: 1;">●</div>
+                        <div style="font-size: 10px; letter-spacing: 0.5px;" data-i18n="hack_chan_c_label">КАНАЛ В</div>
+                        <div id="hack-target-c" style="font-size: 11px; font-weight: bold; margin-top: 3px;">89.7 MHz</div>
+                    </div>
+                </div>
+                
+                <!-- Tuning Display -->
+                <div style="background: rgba(0,0,0,0.5); padding: 10px; border-radius: 4px; text-align: center; margin-bottom: 15px; border: 1px solid rgba(0,255,102,0.2);">
+                    <div style="font-size: 10px; color: #00ff66; opacity: 0.7; letter-spacing: 0.5px;" data-i18n="hack_search">ПОИСК ЧАСТОТЫ:</div>
+                    <div id="hack-current-freq" style="font-size: 28px; font-weight: bold; color: #00ff66; margin: 5px 0; font-family: monospace;">50.0 MHz</div>
+                    <div id="hack-signal-strength" style="font-size: 11px; color: #ffcc00; height: 15px; font-weight: bold; letter-spacing: 0.5px;">СИГНАЛ: РАССОГЛАСОВАНИЕ</div>
+                </div>
+                
+                <!-- Slider -->
+                <div style="margin-bottom: 10px;">
+                    <input id="hack-tuner-slider" type="range" min="100" max="990" value="500" style="width: 100%; background: #00140a; border: 1px solid #00ff66; outline: none; height: 8px; border-radius: 4px; -webkit-appearance: none;" />
+                </div>
+            </div>
+            
+            <div style="display: flex; gap: 10px;">
+                <button id="btn-hack-submit" class="btn glow-btn" style="flex: 1; border-color: #00ff66; color: #00ff66;" data-i18n="btn_hack_submit">СОЕДИНЕНИЕ</button>
+                <button id="btn-hack-cancel" class="btn" style="flex: 1;" data-i18n="btn_hack_cancel">ОТМЕНА</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- STEAM-STYLE ACHIEVEMENT POPUP -->
+    <div id="achievement-popup" class="achievement-popup-hidden">
+        <div class="achievement-popup-content">
+            <div class="achievement-popup-icon">★</div>
+            <div class="achievement-popup-text">
+                <div class="achievement-popup-header" data-i18n="achievement_popup_header">Достижение получено!</div>
+                <div id="achievement-popup-title" class="achievement-popup-title">Мясник гигахруща</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TRUE ENDING WHITEOUT OVERLAY -->
+    <div id="true-ending-whiteout" class="overlay-hidden" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 99998; opacity: 0; transition: opacity 4.0s ease; pointer-events: none;"></div>
+
+    <!-- TRUE ENDING WAKEUP SCREEN -->
+    <div id="true-ending-wakeup" class="screen-inactive" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #ffffff; z-index: 99999; display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 3.0s ease; box-sizing: border-box; overflow: hidden; padding: 20px;">
+        <!-- Blurry Nature Canvas/Background -->
+        <div id="true-ending-nature" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; filter: blur(15px); opacity: 0.8; background-size: cover; background-position: center; z-index: 1;"></div>
+        
+        <!-- Ending Info Content Card -->
+        <div id="true-ending-credits" style="position: relative; z-index: 2; text-align: center; font-family: var(--font-mono); color: #111111; max-width: 500px; width: 100%; padding: 25px; background: rgba(255, 255, 255, 0.9); border-radius: 6px; border: 3px double #111111; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); box-sizing: border-box; opacity: 0; transition: opacity 3.0s ease;">
+            <h1 style="color: #6b0a0a; font-size: 1.8rem; margin: 0 0 12px 0; font-weight: bold; letter-spacing: 2px;" id="true-ending-title" data-i18n="ending_wakeup_title">ПРОБУЖДЕНИЕ</h1>
+            <p style="font-size: 0.95rem; margin-bottom: 15px; line-height: 1.5; color: #222222; font-family: var(--font-serif); text-align: left;" id="true-ending-desc">
+                Вы сделали глубокий вдох. Воздух чистый, теплый и пахнет свежей травой.<br><br>
+                Очертания неба, зеленого дерева и шелестящих листьев сквозь полузакрытые веки обретают теплоту.<br><br>
+                Кошмар Гигахрущевки завершен. Вы наконец-то проснулись.
+            </p>
+            <div style="border-top: 1.5px solid #111111; border-bottom: 1.5px solid #111111; padding: 12px 0; margin-bottom: 15px; font-family: var(--font-mono); font-size: 0.85rem; color: #444444; text-align: left;" id="true-ending-stats">
+                <div style="font-weight: bold; font-size: 0.95rem; color: #111111; margin-bottom: 5px; text-align: center; letter-spacing: 1px;">ИСТИННАЯ КОРНЕВАЯ КОНЦОВКА</div>
+                Записок собрано и прочитано: 10 / 10<br>
+                Спустились до пробуждения на: <span id="true-ending-floors-descended" style="font-weight: bold; color: #6b0a0a;">0</span> этажей
+            </div>
+            <div style="font-size: 0.85rem; color: #111111; font-family: var(--font-mono); margin-bottom: 15px;" id="true-ending-credits-author">
+                <strong>Автор игры:</strong> @sw1therland<br>
+                <span style="font-size: 0.72rem; color: #666666;">Спасибо за прохождение! Вы вырвались из Самостроя.</span>
+            </div>
+            <button id="btn-true-ending-restart" class="btn glow-green-btn" style="width: 100%; font-weight: bold; padding: 10px; font-size: 0.9rem;" data-i18n="btn_true_ending_restart">НАЧАТЬ СМЕНУ ЗАНОВО</button>
+        </div>
+    </div>
+
+    <!-- JS script -->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+--- MATCH 1 ---
+
+{"name":"media__1780479376372.png", "sizeBytes":"79052"}
+{"name":"media__1780479390054.png", "sizeBytes":"46106"}
+{"name":"media__1780493153419.png", "sizeBytes":"528523"}
+{"name":"media__1780497545638.png", "sizeBytes":"23441"}
+{"name":"media__1780499085093.png", "sizeBytes":"50536"}
+{"name":"media__1780500084513.png", "sizeBytes":"18812"}
+{"name":"media__1780505094229.png", "sizeBytes":"41823"}
+{"name":"media__1780505101214.png", "sizeBytes":"11793"}
+{"name":"media__1780506611378.png", "sizeBytes":"2150"}
+{"name":"media__1780506986444.png", "sizeBytes":"226157"}
+{"name":"media__1780650172051.png", "sizeBytes":"134390"}
+{"name":"media__1780650175430.png", "sizeBytes":"237605"}
+{"name":"task.md", "sizeBytes":"861"}
+{"name":"task.md.metadata.json", "sizeBytes":"209"}
+{"name":"walkthrough.md", "sizeBytes":"11383"}
+{"name":"walkthrough.md.metadata.json", "sizeBytes":"280"}
+
+Summary: This directory contains 2 subdirectories and 23 files.
+
+========================================
+
+
+--- MATCH 2 ---
+
+
+
+
+
+4. сделай вентиль на дверях по центру и больше
+
+
+
+
+
+5. на лестнице есть салатовая херня (фото 1), можешь её или убрать, или переместить чтобы нормально выглядела
+
+
+
+
+
+6. убери пустоту на лестнице (фото 2)
+
+
+
+
+
+--- MATCH 3 ---
+
+{"name":"media__1780479376372.png", "sizeBytes":"79052"}
+{"name":"media__1780479390054.png", "sizeBytes":"46106"}
+{"name":"media__1780493153419.png", "sizeBytes":"528523"}
+{"name":"media__1780497545638.png", "sizeBytes":"23441"}
+{"name":"media__1780499085093.png", "sizeBytes":"50536"}
+{"name":"media__1780500084513.png", "sizeBytes":"18812"}
+{"name":"media__1780505094229.png", "sizeBytes":"41823"}
+{"name":"media__1780505101214.png", "sizeBytes":"11793"}
+{"name":"media__1780506611378.png", "sizeBytes":"2150"}
+{"name":"media__1780506986444.png", "sizeBytes":"226157"}
+{"name":"media__1780650172051.png", "sizeBytes":"134390"}
+{"name":"media__1780650175430.png", "sizeBytes":"237605"}
+{"name":"task.md", "sizeBytes":"861"}
+{"name":"task.md.metadata.json", "sizeBytes":"209"}
+{"name":"walkthrough.md", "sizeBytes":"11383"}
+{"name":"walkthrough.md.metadata.json", "sizeBytes":"280"}
+
+Summary: This directory contains 2 subdirectories and 23 files.
+
+========================================
+
+
+--- MATCH 4 ---
+
+{"name":"media__1780479376372.png", "sizeBytes":"79052"}
+{"name":"media__1780479390054.png", "sizeBytes":"46106"}
+{"name":"media__1780493153419.png", "sizeBytes":"528523"}
+{"name":"media__1780497545638.png", "sizeBytes":"23441"}
+{"name":"media__1780499085093.png", "sizeBytes":"50536"}
+{"name":"media__1780500084513.png", "sizeBytes":"18812"}
+{"name":"media__1780505094229.png", "sizeBytes":"41823"}
+{"name":"media__1780505101214.png", "sizeBytes":"11793"}
+{"name":"media__1780506611378.png", "sizeBytes":"2150"}
+{"name":"media__1780506986444.png", "sizeBytes":"226157"}
+{"name":"media__1780650172051.png", "sizeBytes":"134390"}
+{"name":"media__1780650175430.png", "sizeBytes":"237605"}
+{"name":"task.md", "sizeBytes":"861"}
+{"name":"task.md.metadata.json", "sizeBytes":"209"}
+{"name":"walkthrough.md", "sizeBytes":"11383"}
+{"name":"walkthrough.md.metadata.json", "sizeBytes":"280"}
+
+Summary: This directory contains 2 subdirectories and 23 files.
+
+========================================
+
+

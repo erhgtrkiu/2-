@@ -1,0 +1,51 @@
+Created At: 2026-06-05T09:22:45Z
+Completed At: 2026-06-05T09:22:46Z
+
+				The command completed successfully.
+				Output:
+				=== Parsing scratch/raw_line_2665.txt ===
+Created At: 2026-06-03T16:54:49Z
+Completed At: 2026-06-03T16:54:49Z
+File Path: `file:///C:/Users/m3615/samosbor_game/app.js`
+Total Lines: 5504
+Total Bytes: 231381
+Showing lines 30 to 75
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+30: 
+31: const LORE_NOTES = [
+32:     {
+33:         id: 0,
+34:         title: "Грязный листок бумаги (Этаж ~1200)",
+35:         content: "Блок 1290. Семнадцатый день после блокировки сектора. \n\nВентиляция гудит как бешеная, оттуда постоянно пахнет сырым, гниющим мясом и химикатами. Сосед снизу вчера пропал. Его жена говорит, что слышала скрежет за гермодверью посреди ночи, будто кто-то когтями пытался подковырнуть стальной уплотнитель. \n\nВода в кранах уже неделю идет бурая. Кажется, фильтры на водозаборе забились останками. Ликвидаторы не приходят. Нам говорят сидеть по квартирам. Где же чертово солнце? Существует ли оно вообще, или бетон - это всё, что есть в этом мире?"
+36:     },
+37:     {
+38:         id: 1,
+39:         title: "Рапорт командира группы (Этаж ~1100)",
+40:         content: "РАПОРТ. Ликвидатор мл. сержант Соболев. Группа «Бета-6». \n\nНам приказали зачистить блок 1105 после локального прорыва самосбора. Всё шло по инструкции, заливали коридор реагента
+<truncated 4315 bytes>
+ИДАТОРОВ."
+56:     },
+57:     {
+58:         id: 5,
+59:         title: "Кровавый клочок блокнота (Этаж ~700)",
+60:         content: "Если ты читаешь это... беги... \n\nЯ пробил шахту кабельного коллектора на 700 этаже. Комитет врет нам веками! Нет никакого хаоса снаружи. Стены Хруща — это лишь оболочка. Я видел... Я видел небо! Оно действительно синее, и там пахнет травой, а не хлоркой и горелой плотью. \n\nНо они следят за нами. Самосбор — это не природное бедствие. Они запускают его сами через вентиляцию каждый раз, когда население этажа начинает догадываться о правде. Это зачистка! \nЕсли начнется Самосбор, не прячься. Стой на месте в коридоре. Прими его. Нас травят газом, вызывающим галлюцинации и сон, но это единственный способ сорвать датчики слежения и... [залито старой темной кровью]"
+61:     }
+62: ];
+63: 
+64: // --- РЕГИСТР ДОСТИЖЕНИЙ (STEAM-STYLE) ---
+65: const ACHIEVEMENTS = {
+66:     gigahrush_butcher: {
+67:         id: "gigahrush_butcher",
+68:         title: "Мясник гигахруща",
+69:         description: "Напугайте или уничтожьте 50 тварей",
+70:         target: 50,
+71:         unlocked: false,
+72:         progress: 0
+73:     },
+74:     self_taught_hacker: {
+75:         id: "self_taught_hacker",
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.
+
+=== Parsing scratch/raw_line_2670.txt ===
+I will replace the existing array of `LORE_NOTES` in `app.js` with the expanded set of 10 notes, incorporating the creepy notes requested by the user, including the dynamic floor-level check and the "ПРОСНИСЬ" loop.
+

@@ -1,0 +1,1 @@
+"Add createStairsDoorTexture and its normal map generator in generateProceduralTextures."

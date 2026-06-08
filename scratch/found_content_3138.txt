@@ -1,0 +1,97 @@
+Created At: 2026-06-03T17:36:24Z
+Completed At: 2026-06-03T17:36:24Z
+File Path: `file:///C:/Users/m3615/samosbor_game/app.js`
+Total Lines: 6255
+Total Bytes: 262364
+Showing lines 1 to 180
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: /**
+2:  * САМОСБОР: ЛИКВИДАТОР 1324 - 3D FPS Игровой движок
+3:  */
+4: 
+5: // --- НАСТРОЙКИ ИГРЫ ---
+6: const START_FLOOR = 1324;
+7: const END_FLOOR = 1;
+8: const MAX_HEALTH = 100;
+9: const MAX_WATER = 100;
+10: const MAX_AMMO = 24;
+11: const MAX_FILTER = 100;
+12: 
+13: // Глобальные переменные света
+14: let doorLights = {};
+15: let playerFlashlight = null;
+16: let warningBeacons = [];
+17: let warningLights = [];
+18: 
+19: // --- РАЗНООБРАЗИЕ ГЕЙМПЛЕЯ: НОВЫЕ ПЕРЕМЕННЫЕ ---
+20: let hallwayCrawlerMesh = null;
+21: let crawlerHealth = 2;
+22: let deadLiquidatorMesh = null;
+23: let deadLiquidatorSearched = false;
+24: let ghostMesh = null;
+25: let activeHackChannel = 'A';
+26: let targetFrequencies = { A: 0, B: 0, C: 0 };
+27: let hackSuccessCallback = null;
+28: let hackActive = false;
+29: let lastBuiltFloor = null;
+30: 
+31: const LORE_NOTES = [
+32:     {
+33:         id: 0,
+34:         title: "Грязный листок бумаги (Этаж ~1200)",
+35:         content: "Блок 1290. Семнадцатый день после блокировки сектора. \n\nВентиляция гудит как бешеная, оттуда постоянно пахнет сырым, гниющим мясом и химикатами. Сосед снизу вчера пропал. Его жена говорит, что слышала скрежет за гермодверью посреди ночи, будто кто-то когтями пытался подковырн
+<truncated 11800 bytes>
+le: "Обманутый",
+129:         description: "Пройти на тупиковую концовку",
+130:         target: 1,
+131:         unlocked: false,
+132:         progress: 0,
+133:         secret: true
+134:     },
+135:     awakened: {
+136:         id: "awakened",
+137:         title: "Пробуждённый и свободный",
+138:         description: "Пройти на истинную концовку",
+139:         target: 1,
+140:         unlocked: false,
+141:         progress: 0,
+142:         secret: true
+143:     }
+144: };
+145: 
+146: function loadAchievements() {
+147:     const saved = localStorage.getItem('samosbor_achievements');
+148:     if (saved) {
+149:         try {
+150:             const parsed = JSON.parse(saved);
+151:             for (let id in ACHIEVEMENTS) {
+152:                 if (parsed[id]) {
+153:                     ACHIEVEMENTS[id].unlocked = !!parsed[id].unlocked;
+154:                     ACHIEVEMENTS[id].progress = parseInt(parsed[id].progress) || 0;
+155:                 }
+156:             }
+157:         } catch(e) {
+158:             console.error("Failed to load achievements", e);
+159:         }
+160:     }
+161: }
+162: 
+163: function saveAchievements() {
+164:     try {
+165:         const data = {};
+166:         for (let id in ACHIEVEMENTS) {
+167:             data[id] = {
+168:                 unlocked: ACHIEVEMENTS[id].unlocked,
+169:                 progress: ACHIEVEMENTS[id].progress
+170:             };
+171:         }
+172:         localStorage.setItem('samosbor_achievements', JSON.stringify(data));
+173:     } catch(e) {
+174:         console.error("Failed to save achievements", e);
+175:     }
+176: }
+177: 
+178: function progressAchievement(id, amount = 1) {
+179:     const ach = ACHIEVEMENTS[id];
+180:     if (!ach || ach.unlocked) return;
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

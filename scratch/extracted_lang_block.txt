@@ -1,0 +1,48 @@
+Created At: 2026-06-03T17:43:59Z
+Completed At: 2026-06-03T17:43:59Z
+File Path: `file:///C:/Users/m3615/samosbor_game/app.js`
+Total Lines: 7638
+Total Bytes: 413716
+Showing lines 1380 to 1420
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1380:         "note_3_content": "12 de marzo. \\n\\nMamá me quitó los lápices de colores porque dibujé el cielo. ¡Yo lo recuerdo! Era tan... azul, y arriba colgaba un gran círculo cálido que brillaba y calentaba. Mamá comenzó a llorar, rompió el dibujo y me golpeó en las manos. Dijo que el cielo es una peligrosa ilusión de locos, y que si alguien del Comité escucha mis historias, seremos enviados a los pisos técnicos inferiores para ser procesados en concentrado de alimentos. \\n\\nDice que no hay nada más que la Khrushchevka. Solo concreto hacia arriba, hacia abajo y en todas las direcciones. Pero sé que miente. Papá fue a buscar una salida hace seis meses y no regresó. Lo encontraré.",
+1381:         "note_4_content": "En la penumbra hay una litera de hierro chirriante con una manta gris de la institución. En la mesita de noche — una tetera de aluminio doblada con el pico astillado. En la pared cuelga torcido un cartel del Comité cubierto de moscas con el Liquidador #1, y en la esquina una vieja válvula oxidada gotea continuamente... \\n\\n[Te quedas frío de terror. ¡Esta es la descripción exacta de tu celda de vivienda 412 en el sector 13-A!]\\n\\n¿Cómo sabe el autor de esta nota cómo es mi habitación? ¿Quién la trajo aquí?",
+1382:         "note_5_content": "DEBES DESPERTAR.\\n\\nTe encuentras actualmente en el piso {0}. Pero esto es una mentira. No es real. Es imposible descender indefinidamente en un pozo de concreto sin comida ni descanso. Estás durmiendo. Tu máscara de gas está vacía desde hace mucho tiempo. Tus pulmones se quemaron con los hum
+<truncated 1948 bytes>
+ gas que causa alucinaciones y sueño, pero es la única forma de perturbar los sensores de seguimiento y... [manchado de sangre oscura vieja]",
+1386:         "note_9_content": "Si encuentras esto, significa que ya me he convertido en parte de la Khrushchevka. \\n\\nFui Liquidador durante treinta años. Soldé puertas, quemé bestias y creí en el Comité. Pero no hay salida. El primer piso es un mito. El Samosbor no es niebla. Es la respiración de un gran organismo durmiente. Todos estamos dentro de una criatura viviente gigante que nos digiere lentamente. La única forma de salir es dejar de resistirse al sueño y abrir los ojos. Pero tengo miedo. Que el Khrush me perdone."
+1387:     }
+1388: };
+1389: 
+1390: function t(key, ...args) {
+1391:     const lang = (state && state.language) || 'ru';
+1392:     const db = LANGUAGES[lang] || LANGUAGES['ru'];
+1393:     let val = db[key];
+1394:     if (val === undefined) {
+1395:         val = LANGUAGES['ru'][key];
+1396:     }
+1397:     if (val === undefined) {
+1398:         return key;
+1399:     }
+1400:     if (args.length > 0) {
+1401:         for (let i = 0; i < args.length; i++) {
+1402:             val = val.replace(`{${i}}`, args[i]);
+1403:         }
+1404:     }
+1405:     return val;
+1406: }
+1407: 
+1408: function getLocalizedDoorName(door) {
+1409:     if (!door) return "";
+1410:     if (door.type === 'apartment') {
+1411:         const num = door.number || 101;
+1412:         if (door.roomType === 'armory') {
+1413:             return t('door_armory', num);
+1414:         } else if (door.roomType === 'contaminated') {
+1415:             return t('door_contaminated', num);
+1416:         } else if (door.roomType === 'nest') {
+1417:             return t('door_nest', num);
+1418:         } else {
+1419:             return t('door_apartment', num);
+1420:         }
+The above content does NOT show the entire file contents. If you need to view any lines of the file which were not shown to complete your task, call this tool again to view those lines.

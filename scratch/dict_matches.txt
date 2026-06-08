@@ -1,0 +1,6 @@
+Line 4197: key='log_hack_note_samosbor', val='Вы собрали все записки, но не прочитали их... вы не смогли осознать истину.'
+Line 4730: key='bag_hacker_label', val='ВЗЛОМЩИК'
+Line 4743: key='pcs', val='шт'
+Line 4753: key='pcs', val='шт'
+Line 5277: key='log_monster_kick', val='Вы пнули тварь!'
+Line 5289: key='log_monster_kick', val='Вы пнули тварь!'

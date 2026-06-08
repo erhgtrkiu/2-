@@ -1,0 +1,775 @@
+=== STEP 0 ===
+<USER_REQUEST>
+привет, я хочу чтобы ты сделал мне игру которую можно добавить в яндекс игры, вот подробное описание игры:
+Мы - ликвидаторы в гигахрущёвке (надеюсь знаешь что это такое и лор этого всего), нас оправили с 1324 этажа на первый для ликвидации последствий самосбора, у нас есть: пистолет (на 24 патрона), противогаз, сумка куда можно ложить вещи и бутылка воды.
+Идя по лестницам можно услышать или увидеть страшных ебак, но их можно спугнуть выстрелом из пистолета и тогда они убегут, если нет - ты труп. Так же на этажах и лестницах можно найти записки (не ниже 700 этажа), в них будут записи ликвидаторов и жильцов гигахрущёвки, но они уже мертвы, на каждом листочке есть текст и старая, выцвевшая кровь. Некоторые двери на этажах можно открывать, за ними могут быть как контаны жильцов, переходы между этажами и монстры (если внутри монстры можно постоять возле двери и послушать звуки, если там шипение - там монстры), если открыть дверь с жилой комнатой там можно найти записки, магазины с патронами и воду, если открыть дверь между уровнями мы можем пройти через неё и как только мы это сделаем она закроется за нами, если открыть дверь с монстрами то будет скример и мы умрём. Время от времени происходит самосбор и в обычных комнатах (которые должны быть минимум 1 на этаж) можно спрятаться, если не спрятался - умер. есть 3 концовки:
+Собрать все записки которые можно и ты поймёшь что всё время вас обманывали и жизнь вне гига хрущёвки есть, во время само сбора ты застываешь на месте и ждёшь после чего ты просыпаешься и понимаешь что это был сон из которого ты мог выбраться только так
+Дойти до первого этажа после чего дверь на лестнице закроется, двери не будут открываться, начнёться само сбор и ты умрёшь
+Умереть от самосбора до первого этажа
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:38:39+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from None to Gemini 3.5 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 8 ===
+<USER_REQUEST>
+добавь в план то что все текстурки должен сделать nano banana а модельки можешь взять из интернета или сделать сам, со звуками так же
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:39:46+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 14 ===
+<USER_REQUEST>
+делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:40:08+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 66 ===
+<USER_REQUEST>
+1. это должно быть 3д
+2. тут не русский, а чтото непонятное 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:44:37+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 86 ===
+<USER_REQUEST>
+это конечно круто, но это должны быть полноценная игра с управлением WASD и не только дверьми, ещё лестницами, номером этажа и двери должны быть 6 на этаж и шанс на то что будут двери:
+Жилая комната: 100% на этаж, может быть больше (шанс на вторую и последующие двери 30%)
+Комната с тварями: 60% на этаж
+Переход между уровнями: 30% на этаж
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:50:01+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 108 ===
+<USER_REQUEST>
+1. Р в названии съехало
+2. Вечная загрузка SDK
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:52:57+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 196 ===
+<USER_REQUEST>
+локалхост делаеться вечно
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:57:17+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 219 ===
+<USER_REQUEST>
+нажимаю на кнопку "начать смену", ничего не происходит
+убери "текстуры: nano banana" и так далее
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T09:59:04+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 299 ===
+<USER_REQUEST>
+всё ещё ничего не происходит
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T10:09:48+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.5 Flash (High) to Claude Opus 4.6 (Thinking). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 409 ===
+<USER_REQUEST>
+продолжай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T10:17:11+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Claude Opus 4.6 (Thinking) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 415 ===
+<USER_REQUEST>
+1. двери открываются, но за ними стена, а должен быть прямой проход
+2. должно быть не экран с правой панелью, а просто экран как во всех играх, статистика по краям
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T10:23:32+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 435 ===
+<USER_REQUEST>
+ну делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T10:32:43+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 524 ===
+<USER_REQUEST>
+всё должно быть кнопками и теперь комнаты просвечиваются, так же добавь фонарик на f, а открытие дверей на r
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T10:44:20+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 622 ===
+<USER_REQUEST>
+1. стены просвечиваются
+2. ты должен генерировать 5 этажей 1 на котором игрок сейчас, 2 сверху и снизу и они должны двигаться с игроком
+3. лестница не должна вести на переход, она должна быть отрендерина вместе с этажами
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T11:05:32+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 646 ===
+<USER_REQUEST>
+делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T11:07:58+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 671 ===
+<USER_REQUEST>
+продолжай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T11:15:16+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.1 Pro (High) to Gemini 3.5 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 783 ===
+<USER_REQUEST>
+1. стены просвечиваются (1 фото)
+2. в начале игры слишком лагает
+3. при поднятие лестницы мы спускаемся, а при спуске поднимаемся
+4. при поднятие на 1 ступеньку засчитывается 1 этаж
+5. двери не там где надо (2 фото)
+6. вот клавиши и бинды:
+надеть противогаз: t
+сделать глоток воды: q
+открыть сумку: g
+выстрелить: ЛКМ
+открыть/закрыть дверь: r
+обыскуать комнату: z
+7. убери всё на подобии такого (фото 3)
+8. на лестнице нереально лагает
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T11:40:17+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 881 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T12:13:45+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 941 ===
+<USER_REQUEST>
+так
+1. запереть дверь это просто подойти и опять нажать r по ней
+2. когда ты закрыл гермодверь ты её закрыл и это должно быть визуально
+3. почти при всех действиях лагает (переход на новый этаж, открытие дверей и тд.)
+4. все объекты в комнатах должны быть детализированы, чтобы хотябы понять что это, а не просто кубы
+5. я не могу ничего обыскать
+6. убери все смайлики
+7. убери в действиях "запереть дверь", "выйти в коридор" и так далее на что кнопки забинжены
+8. много чего накладывается друг на друга (фото 1 и фото 2)
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T12:36:31+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 947 ===
+<USER_REQUEST>
+добавь ещё фикс того что я могу через стены проходить в комнатах
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T12:38:49+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 951 ===
+<USER_REQUEST>
+делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T12:40:45+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1012 ===
+<USER_REQUEST>
+продолжай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T12:43:35+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.5 Flash (High) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 1063 ===
+<USER_REQUEST>
+1. коллизия не по всем объектам
+2. не могу обыскать даже если подхожу вплотную
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T12:58:01+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1112 ===
+<USER_REQUEST>
+ну смотри, визуально комнаты всё ещё не закрываются, я могу проходить сквозь текстуры в комнатах и в начале где я спавнюзь за стеной и через ней я могу проходить, при переходе между этажами и выстрелами очень лагает, ты можешь я так подумал сделать не html игру (но файлы оставь и исправляй), а игру на c++
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T14:21:53+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.1 Pro (High) to Claude Opus 4.6 (Thinking). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 1147 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T14:24:45+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1163 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T14:28:11+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1168 ===
+<USER_REQUEST>
+делай и делай сам всё, скачивай языки, пиши код и тд
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T14:29:46+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Claude Opus 4.6 (Thinking) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 1330 ===
+<USER_REQUEST>
+забываем про игру, возвращаемся к штмл
+1. не могу обыскивать
+2. всё ещё прохожу сквозь текстуры
+3. очень лагает часто
+4. сделай консоль с командами, открытие на CTRL+SHIFT+~
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T15:03:56+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1348 ===
+<USER_REQUEST>
+делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T15:06:24+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.1 Pro (High) to Claude Opus 4.6 (Thinking). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 1394 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T15:10:54+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1404 ===
+<USER_REQUEST>
+я спавнюсь за стеной, передвинь метсто спавна чуть вперёд
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:05:52+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Claude Opus 4.6 (Thinking) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 1431 ===
+<USER_REQUEST>
+1. дверь визуально тоже должна закрываться
+2. в консоли не могу нажать энтер
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:17:40+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1462 ===
+<USER_REQUEST>
+дверь закрыл, а она открыта
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:26:00+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1499 ===
+<USER_REQUEST>
+продолжай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:30:05+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.1 Pro (High) to Gemini 3.5 Flash (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 1608 ===
+<USER_REQUEST>
+снаружи всё закрывается, но внутри я закрываю и она открыта
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:37:20+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1611 ===
+<USER_REQUEST>
+снаружи всё закрывается, но внутри я закрываю и она открыта, ещё сделай текстурки через нано банана более реалестичными. добавь звуки шагов, открывание дверей а так же сделай модельку пистолета. ещё оптимизируй нормально игру. ещё я не могу обыскивать комнаты и нажимать энтр в консоли
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T16:50:02+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1732 ===
+<USER_REQUEST>
+сделай меню паузы
+сделай начальное меню с фоном и кнопками
+сделай возможность перебинживать кнопки
+сделай  расход воды медленней
+сделай игру более оптимизированой
+сделай так чтобы выше этажа на котором мы спавнимся пройти нельзя было
+сделай выносливость и бег на шифт
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T17:15:18+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1772 ===
+<USER_REQUEST>
+добавь ещё что на каждом лестничном пролёте должны быть очертания больших дверей, при обыскивании комнат можно найти взломщик и батарейки, им можно закрыть или открыть эти двери, но на последнем этаже пишет что оно на этой двери не работает и концовку со всеми записками добавь. делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T17:20:41+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 1999 ===
+<USER_REQUEST>
+1. сделай так чтобы пока взломщик не заспавниться в комнате двери закрыты быть не могут
+2. в меню управления нет ничего
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T17:39:06+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2025 ===
+<USER_REQUEST>
+подтверждаю
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T17:41:12+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2061 ===
+<USER_REQUEST>
+сделай игру разнообразнее, чтобы не наскучило через 5 минут
+сделай так чтобы перед открытием двери между лестницами надо было решить лёгкую головоломку
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T17:48:53+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2093 ===
+<USER_REQUEST>
+подтверждаю
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T17:50:40+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2286 ===
+<USER_REQUEST>
+я спавнюсь в темноте
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T18:01:00+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2318 ===
+<USER_REQUEST>
+я в темноте
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T18:04:45+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2421 ===
+<USER_REQUEST>
+при сообщении на фото 1 я просто стою на место и не могу даже камерой повернуть
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T18:21:46+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2445 ===
+<USER_REQUEST>
+сделай всё более объёмным, например:
+сделай ручки в дверях объёмными
+добавь мкоманду на выдачу взломщика и бесконечные батареи
+добавь концовку со всеми записками
+добавь ачивки например "Мясник гигахруща" (напугать 50 тварей), "Хакер самоучка" (взломать 100 дверей), "Транжира" (потратить все патроны до 1000 этажа) и так далее, они будут как в стиме
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T19:11:26+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2516 ===
+<USER_REQUEST>
+делай и добавь в меню, об игре и в титрах то что игру делал @sw1therland
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T19:28:04+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2572 ===
+<USER_REQUEST>
+делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T19:32:54+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2706 ===
+<USER_REQUEST>
+ручка это фото 1, а не фото 2
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T19:45:01+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2722 ===
+<USER_REQUEST>
+для истинной концовки надо просто собрать все 6 записок и прочесть их, некоторое из них должны быть жуткие типа "ПРОСНИСЬ ПРОСНИСЬ ПРОСНИСЬ" на весь лист либо описание комнаты ликвидатора, он должен сказать "откуда эта записка знает как выглядит моя комната", либо "ты сейчас находишься на [номер этажа] этаже, это не реально, ты спишь, ты должен проснуться, должен, проснись", эта записка не должна быть последней, увеличь кол-во записок до 10
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T19:54:02+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2776 ===
+<USER_REQUEST>
+я собрал и прочитал все записки, как только ты прочитаешь последнюю записку и закроешь сумку экран должен постепенно засветится белым светом и ты должен проснутьчя и видеть мыльное очертание неба, травы и дерева, начинается лёгкая музыка и появляется информация
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:03:50+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2806 ===
+<USER_REQUEST>
+музыка заиграла, но очертания нет
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:08:14+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2826 ===
+<USER_REQUEST>
+1. сделай текст "Начать новую смену более заметной"
+2. сделай 2 новые ачивки: "Обманутый" (пройти на тупиковую концовку), "Пробуждённый и свободный" (пройти на истинную концовку), сделай их секретными (не показываются в достижениях пока не пройдёшь эти концовки
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:11:33+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 2916 ===
+<USER_REQUEST>
+ачивка "Пробуждённый и свободный" должна появится когда появляется окно, а так же сделай более красивую заставку в главном меню если ты открыл эту концовку, сделай её живой и чтобы эта музыка играла в главном меню если ты открыл концовку
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:17:18+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3036 ===
+<USER_REQUEST>
+1. всё ещё на экране пишет "0/6 записок"
+2. сделай так чтобы от твари которая на этаже просто на тебя бежит можно было как-то защитится
+3. оптимизируй игру
+4. сделай так чтобы игрок в любом случае за игру подобрал взломщик (подготовь спавн вещей для каждой комнаты и двери на этаж ниже этажа с комнатой в которой находится хакер была дверь, вынуждая игрока облутывать комнаты
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:29:37+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3158 ===
+<USER_REQUEST>
+добавь ещё вкладку "настройки" в меню и паузе где можно настроить управление и язык (добавь перевод на английский, китайский, немецкий, итальянский, испанский)
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:35:20+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3250 ===
+<USER_REQUEST>
+делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:38:47+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3519 ===
+<USER_REQUEST>
+1. убери всё таки перевод
+2. у меня при входе в миссию не могу двигаться и даже двигать камерой
+3. добавь страшную музыку при экране когда не прошёл на истинную концовку
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T20:52:03+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.5 Flash (High) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 3675 ===
+<USER_REQUEST>
+что ты там бесконечно делаешь, просто исправь 3 файла
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T21:02:36+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3690 ===
+<USER_REQUEST>
+скока можно выполнять пайтон, исправь сука 3 файла
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T21:04:22+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3731 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T21:08:24+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Claude Opus 4.6 (Thinking) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 3770 ===
+<USER_REQUEST>
+1. кнопки в меню кроме начать смену не работают
+2. в игре у меня есть курсор, я не могу двигатся, поворачиватся и кнопки не работают
+Бля прошу исправь всё без багов, так хорошо шли...
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T21:13:13+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3799 ===
+<USER_REQUEST>
+1. не могу двигаться никак в игре
+2. в "об игре" нет ничего
+3. настройки не открываются
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T21:16:10+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3838 ===
+<USER_REQUEST>
+когда я облутываю комнаты мы не пишет что я нашёл, но и не пишет что я ничего не нашёл, надо чтобы лут был с шансом 60%
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T21:26:42+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3883 ===
+<USER_REQUEST>
+сделай главное меню с проходом на хорошую концовку "живым", чтобы там сменялся день и ночь, время от времени приходили играть дети, росли деревья
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-03T21:37:06+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 3919 ===
+<USER_REQUEST>
+1. не могу читать записки
+
+2. когда облутываю комнаты и получаю записку это не пишут
+
+3. в консоли нажимаю энтр и оно в консоль идёт но ничего не происходит
+
+4. сделай вентиль на дверях по центру и больше
+
+5. на лестнице есть салатовая херня (фото 1), можешь её или убрать, или переместить чтобы нормально выглядела
+
+6. убери пустоту на лестнице (фото 2)
+
+7. если подойти вплотную к стене ты будешь видеть всё за её пределами, исправь
+
+8. сделай красивую модельку пистолета
+
+9. сделай так чтобы можно было найти бинты в комнатах и использовать их (они пополняют хп, при старте у нас их 2)
+
+10. сделай так чтобы при выстреле, переходе между этажами и тд не лагало 
+
+
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T12:02:56+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Claude Sonnet 4.6 (Thinking) to Gemini 3.5 Flash (Medium). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 4693 ===
+<USER_REQUEST>
+h
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T13:22:58+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 4936 ===
+<USER_REQUEST>
+запусти локал хост (первым делом) и продолжай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T15:18:14+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.5 Flash (Medium) to Gemini 3.1 Pro (High). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 5058 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T15:48:49+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5321 ===
+<USER_REQUEST>
+в каждой записке /n есть, исправь
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:08:56+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Gemini 3.1 Pro (High) to Claude Sonnet 4.6 (Thinking). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 5326 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:09:26+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5344 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:10:57+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5357 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:11:21+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5365 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:16:06+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5381 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:37:20+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5397 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:38:19+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5405 ===
+<USER_REQUEST>
+Continue
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:41:19+03:00.
+</ADDITIONAL_METADATA>
+<USER_SETTINGS_CHANGE>
+The user changed setting `Model Selection` from Claude Sonnet 4.6 (Thinking) to Gemini 3.5 Flash (Medium). No need to comment on this change if the user doesn't ask about it. If reporting what model you are, please use a human readable name instead of the exact string.
+</USER_SETTINGS_CHANGE>
+
+=== STEP 5705 ===
+<USER_REQUEST>
+делай
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:51:33+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5729 ===
+<USER_REQUEST>
+1. всё ещё закрыто не то (фото)
+2. когда открываешь дверь 2 раз и дальше то проигрывается звук закрытия, а не открытия
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T16:58:08+03:00.
+</ADDITIONAL_METADATA>
+
+=== STEP 5972 ===
+<USER_REQUEST>
+продолжай
+и ещё
+сделай живое меню медленней
+звуки часто путаются 
+</USER_REQUEST>
+<ADDITIONAL_METADATA>
+The current local time is: 2026-06-05T17:16:39+03:00.
+</ADDITIONAL_METADATA>
+
